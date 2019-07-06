@@ -12,9 +12,10 @@ public class Pokemon {
     public String name;
     public String description;
 
-    public Pokemon(){
+    public Pokemon() {
 
     }
+
     public Pokemon(String dex_no, String name, String description) {
         this.dex_no = dex_no;
         this.name = name;
