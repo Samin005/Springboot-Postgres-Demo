@@ -1,8 +1,6 @@
 package io.samin005.springbootpostgresdemo.pokemons;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,11 @@ public class PokemonController {
     @RequestMapping("/pokemons/{dex_no}")
     public Pokemon getPokemonByDexNo(@PathVariable String dex_no) {
         return pokemonService.getPokemonByDexNo(dex_no);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pokemons")
+    public String addPokemon(@RequestBody Pokemon newPokemon) {
+        String result = pokemonService.addPokemon(newPokemon);
+        return result;
     }
 }
