@@ -1,7 +1,6 @@
 package io.samin005.springbootpostgresdemo.pokemons;
 
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -25,7 +24,11 @@ public class PokemonController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/pokemons")
     public String addPokemon(@RequestBody Pokemon newPokemon) {
-        String result = pokemonService.addPokemon(newPokemon);
-        return result;
+        return pokemonService.addPokemon(newPokemon);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pokemons")
+    public String updatePokemon(@RequestBody Pokemon newPokemon) {
+        return pokemonService.updatePokemon(newPokemon);
     }
 }
