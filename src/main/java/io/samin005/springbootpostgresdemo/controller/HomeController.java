@@ -1,4 +1,4 @@
-package io.samin005.springbootpostgresdemo.home;
+package io.samin005.springbootpostgresdemo.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
