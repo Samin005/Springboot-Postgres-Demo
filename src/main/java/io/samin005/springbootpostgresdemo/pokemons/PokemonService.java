@@ -10,10 +10,12 @@ import java.util.List;
 public class PokemonService {
 
     private final PokemonRepository pokemonRepository;
+    private final MovesRepository movesRepository;
     private Logger LOGGER = LoggerFactory.getLogger(PokemonService.class.getName());
 
-    public PokemonService(PokemonRepository pokemonRepository) {
+    public PokemonService(PokemonRepository pokemonRepository, MovesRepository movesRepository) {
         this.pokemonRepository = pokemonRepository;
+        this.movesRepository = movesRepository;
     }
 
     List<Pokemon> getAllPokemon(){
@@ -82,6 +84,10 @@ public class PokemonService {
             LOGGER.error(result);
         }
         return result;
+    }
+
+    MovesEntity getMoves(String dex_no) {
+        return movesRepository.findById(dex_no).get();
     }
 
     private String checkPokemonProperties(Pokemon pokemon) {

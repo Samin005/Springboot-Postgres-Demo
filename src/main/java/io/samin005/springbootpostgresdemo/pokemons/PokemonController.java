@@ -31,4 +31,9 @@ public class PokemonController {
     public String updatePokemon(@RequestBody Pokemon newPokemon) {
         return pokemonService.updatePokemon(newPokemon);
     }
+
+    @RequestMapping("/pokemons/{dex_no}/moves")
+    public MovesEntity getMoves(@PathVariable String dex_no) {
+        return pokemonService.getMoves(dex_no);
+    }
 }
