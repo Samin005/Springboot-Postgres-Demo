@@ -31,7 +31,7 @@ public class PokemonService {
     public String addNewPokemon(PokemonsEntity newPokemon) {
         if (pokemonRepository.existsById(newPokemon.getDexNo())) {
             pokemonRepository.save(newPokemon);
-            return "Pokemon '" + newPokemon.getName() + "' with dex no " + newPokemon.getDexNo() + " already existed and it was updated.";
+            return "Pokemon '" + newPokemon.getName() + "' with dex no " + newPokemon.getDexNo() + " already existed and it was updated!";
         } else {
             pokemonRepository.save(newPokemon);
             return "Pokemon '" + newPokemon.getName() + "' added successfully!";
