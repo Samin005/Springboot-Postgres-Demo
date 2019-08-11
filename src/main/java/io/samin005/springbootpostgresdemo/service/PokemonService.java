@@ -18,7 +18,7 @@ public class PokemonService {
 
     public List<PokemonsEntity> getAllPokemon() {
         List<PokemonsEntity> pokemons = new ArrayList<>();
-        pokemonRepository.findAll().forEach(pokemons::add);
+        pokemonRepository.findAllByOrderByDexNoAsc().forEach(pokemons::add);
         return pokemons;
     }
 
